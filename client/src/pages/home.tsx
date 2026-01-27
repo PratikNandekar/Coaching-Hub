@@ -294,74 +294,58 @@ export default function Home() {
             </div>
 
             <div className="p-8 md:p-12 bg-white">
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Full Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="John Doe" {...field} className="bg-muted/30" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
+              <form 
+                action="https://docs.google.com/forms/d/e/1FAIpQLSeMXgWFuIaG58hPiho0HFPOsNHeBzBM7JPQufLXU0doFdqJ7w/formResponse" 
+                method="POST"
+                target="_blank"
+                className="space-y-6"
+              >
+                <div className="space-y-2">
+                  <label className="text-sm font-medium leading-none">Full Name</label>
+                  <input 
+                    name="entry.123456789"
+                    required
+                    placeholder="John Doe" 
+                    className="flex h-10 w-full rounded-md border border-input bg-muted/30 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" 
                   />
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email</FormLabel>
-                          <FormControl>
-                            <Input placeholder="john@example.com" {...field} className="bg-muted/30" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Phone</FormLabel>
-                          <FormControl>
-                            <Input placeholder="(555) 000-0000" {...field} className="bg-muted/30" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium leading-none">Email</label>
+                    <input 
+                      name="entry.234567890"
+                      type="email"
+                      required
+                      placeholder="john@example.com" 
+                      className="flex h-10 w-full rounded-md border border-input bg-muted/30 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" 
                     />
                   </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium leading-none">Phone</label>
+                    <input 
+                      name="entry.345678901"
+                      required
+                      placeholder="(555) 000-0000" 
+                      className="flex h-10 w-full rounded-md border border-input bg-muted/30 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" 
+                    />
+                  </div>
+                </div>
 
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Tell us about your learning goals..." 
-                            className="min-h-[120px] bg-muted/30 resize-none" 
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium leading-none">Message</label>
+                  <textarea 
+                    name="entry.456789012"
+                    required
+                    placeholder="Tell us about your learning goals..." 
+                    className="flex min-h-[120px] w-full rounded-md border border-input bg-muted/30 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-none" 
                   />
+                </div>
 
-                  <Button type="submit" className="w-full h-12 text-lg bg-primary hover:bg-primary/90">
-                    Send Message
-                  </Button>
-                </form>
-              </Form>
+                <Button type="submit" className="w-full h-12 text-lg bg-primary hover:bg-primary/90">
+                  Send Message
+                </Button>
+              </form>
             </div>
           </div>
         </div>
